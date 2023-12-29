@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jewelry Product Detail</title>
+</head>
+<body class="billing">
+    <header id="stockdetails">
+        <h1>Stock Details</h1>
+    </header>
+
+    <!-- Search bar -->
+    <input type="text" id="searchInput" placeholder="Search..." oninput="searchProducts()">
+    <br>
+    <h3 id="productName">Product Details</h3>
+    <p id="category">Category: </p>
+    <p id="weight">Weight: </p>
+    <p id="Quantity">Qnt: </p>
+    <p id="rate">Rate: </p>
+    <img id="productImage" src="" alt="Product Image">
+
+    <!-- Buttons for Edit and Delete -->
+    <button onclick="editProduct()">Edit</button>
+    <button onclick="deleteProduct()">Delete</button>
+
+    <script>
+        // Extract query parameters from the URL
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+
+        // Populate the page with product details
+        document.getElementById('productName').innerText = 'Product Name: ' + urlParams.get('productName');
+        document.getElementById('category').innerText = 'Category: ' + urlParams.get('category');
+        document.getElementById('weight').innerText = 'Weight: ' + urlParams.get('weight') + ' gm';
+        document.getElementById('Quantity').innerText = 'Qnt: ' + urlParams.get('Quantity');
+        document.getElementById('rate').innerText = 'Rate: ' + urlParams.get('rate');
+
+        // Set the product image source
+        document.getElementById('productImage').src = urlParams.get('productImage');
+
+        // Function to handle editing
+        function editProduct() {
+            // Redirect to the edit page with the same query parameters
+            window.location.href = 'edit.html' + window.location.search;
+        }
+
+        // Function to handle deleting
+        function deleteProduct() {
+            // Implement logic to delete the product (e.g., send a request to the server)
+            alert('Product deleted!');
+            // Redirect to the home page or any other desired page
+            window.location.href = 'index.html';
+        }
+
+        // Function to handle searching
+        function searchProducts() {
+            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+            // Implement logic to filter and display matching products
+            // This could involve hiding/showing elements based on the search criteria
+            // or fetching data from the server using AJAX
+        }
+    </script>
+</body>
+</html>

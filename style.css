@@ -1,0 +1,22 @@
+body {
+    background-color: #a5a298c4; /* Light gray background color */
+}
+#addstock {
+    background-color: goldenrod;
+    padding: 10px;
+    text-align: center;
+
+}
+
+body.billing #billhead {
+    background-color: goldenrod;
+    padding: 10px;
+    text-align: center;
+}
+
+body.billing #stockdetails{
+    background-color: goldenrod;
+    padding: 10px;
+    text-align: center;
+}
+

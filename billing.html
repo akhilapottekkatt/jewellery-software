@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sales Management</title>
+</head>
+<body class="billing">
+    <header id="billhead">
+        <h1>Sales Bill</h1>
+    </header>
+    <main>
+        <form id="salesForm">
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+            <br>
+            <label for="productName">Product:</label>
+            <select id="productName" name="productName" onchange="updatePrice()">
+                <option value="" disabled selected>Select Product</option>
+                <!-- Populate options dynamically based on available stock -->
+                <!-- Example: -->
+                <option value="ring">Ring</option>
+                <option value="necklace">Necklace</option>
+                <option value="earring">Earring</option>
+            </select>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required onchange="updatePrice()">
+            <br>
+            <label for="totalPrice">Total Price:</label>
+            <input type="text" id="totalPrice" name="totalPrice" readonly>
+            <br>
+            <button type="submit">Submit Order</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

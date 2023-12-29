@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #dashboard {
+      width: 200px;
+      height: 100vh;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      left: -200px;
+      transition: left 0.3s ease;
+    }
+
+    #dashboard.show {
+      left: 0;
+    }
+
+    #toggleButton {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="dashboard">
+    <!-- Your dashboard content goes here -->
+    <h2>Dashboard Content</h2>
+    <p>home</p>
+  </div>
+
+  <div id="toggleButton">&#9654;</div>
+
+  <script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+      document.getElementById('dashboard').classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
